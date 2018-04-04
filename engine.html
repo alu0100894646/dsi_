@@ -47,4 +47,21 @@
       Tablero.rect(this.x, this.y, this.size, this.size);
       Tablero.fill();
   }
+
+  Square.prototype.update = function () {
+      if ((this.x + this.size) >= 610) {
+          this.vel_x = -(this.vel_x);
+      }
+      if ((this.x - this.size) <= 0) {
+          this.vel_x = -(this.vel_x);
+      }
+      if ((this.y + this.size) >= 510) {
+          this.vel_y = -(this.vel_y);
+      }
+      if ((this.y - this.size) <= 0) {
+          this.vel_y = -(this.vel_y);
+      }
+      this.x += this.vel_x;
+      this.y += this.vel_y;
+  }
 </script>
