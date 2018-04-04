@@ -40,4 +40,11 @@
       this.color = color;
       this.size = size;
   }
+
+  Square.prototype.draw = function () {
+      Tablero.beginPath();
+      Tablero.fillStyle = this.color;
+      Tablero.rect(this.x, this.y, this.size, this.size);
+      Tablero.fill();
+  }
 </script>
