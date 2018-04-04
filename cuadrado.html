@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas"width="640" height="480"></canvas></script>
+</body>
+</html>
+<script>
+    var canvas = document.getElementById('canvas');
+    var Pizarra = canvas.getContext('2d');
+
+    Pizarra.strokeStyle = "#FF0000";
+
+    Pizarra.strokeRect(20, 30, 5, 5);
+    Pizarra.lineWidth = 5;
+    Pizarra.strokeStyle = "#FF0000";
+
+    Pizarra.stroke();
+
+</script>
