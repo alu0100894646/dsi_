@@ -17,6 +17,54 @@
 </body>
 </html>
 <script>
+    //Pintar la pizarra del tablero
+    var tablero1 = document.getElementById('tablero');
+    var Tablero = tablero1.getContext('2d');
+    //Tablero.strokeStyle = 'red';
+    Tablero.fillStyle = 'red';
+    Tablero.rect(5, 5, 600, 500);
+    Tablero.lineWidth = 5;
+    //Tablero.fill();
+    //Tablero.strokeStyle = "#000000";
+    //Tablero.stroke();
+    var numSquare;
+    function get_num_square() {
+        //Leer numero de cuadrados
+        numSquare = document.getElementById("numsquare").value
+        //end numero de cuadrados
+        //alert("Hola");
+        document.getElementById("demo").innerHTML = numSquare;
+    }
+    function Square(x, y, vel_x, vel_y, color, size) {
+        this.x = x;
+        this.y = y;
+        this.vel_x = vel_x;
+        this.vel_y = vel_y;
+        this.color = color;
+        this.size = size;
+    }
+    Square.prototype.draw = function () {
+        Tablero.beginPath();
+        Tablero.fillStyle = this.color;
+        Tablero.rect(this.x, this.y, this.size, this.size);
+        Tablero.fill();
+    }
+    Square.prototype.update = function () {
+        if ((this.x + this.size) >= 610) {
+            this.vel_x = -(this.vel_x);
+        }
+        if ((this.x - this.size) <= 0) {
+            this.vel_x = -(this.vel_x);
+        }
+        if ((this.y + this.size) >= 510) {
+            this.vel_y = -(this.vel_y);
+        }
+        if ((this.y - this.size) <= 0) {
+            this.vel_y = -(this.vel_y);
+        }
+        this.x += this.vel_x;
+        this.y += this.vel_y;
+    }
 
     function random(min, max) {
         var num = Math.floor(Math.random() * (max - min + 1)) + min;
