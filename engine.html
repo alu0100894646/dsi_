@@ -22,4 +22,31 @@
         var num = Math.floor(Math.random() * (max - min + 1)) + min;
         return num;
     }
+
+    var Elementos = [];
+
+    function Engine() {
+        //Tablero.fillStyle = '#FFFFFFF';
+
+        Tablero.fillRect(1, 1, 609, 509);
+
+        while (Elementos.length < numSquare) {
+            var cuadrado = new Square(
+                random(0, 610),
+                random(0, 510),
+                random(-7, 7),
+                random(-7, 7),
+                'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) + ')',
+                10
+            );
+            Elementos.push(cuadrado);
+        }
+
+        for (var i = 0; i < numSquare; i++) {
+            Elementos[i].draw();
+            Elementos[i].update();
+        }
+        Tablero.fill();
+        requestAnimationFrame(Engine);
+    }
 </script>
