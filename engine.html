@@ -7,9 +7,20 @@
 </head>
 <body>
     <canvas id="tablero" width="610" height="510">
-        
+
     </canvas></script>
 </body>
 </html>
 <script>
+  //Pintar la pizarra del tablero
+  var tablero1 = document.getElementById('tablero');
+  var Tablero = tablero1.getContext('2d');
+  //Tablero.strokeStyle = 'red';
+  Tablero.fillStyle = 'red';
+  Tablero.rect(5, 5, 600, 500);
+  Tablero.lineWidth = 5;
+  //Tablero.fill();
+  //Tablero.strokeStyle = "#000000";
+  //Tablero.stroke();
+  var numSquare;
 </script>
